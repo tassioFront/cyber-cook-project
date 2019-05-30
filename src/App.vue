@@ -44,9 +44,9 @@ export default {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
     max-width: 996px;
     margin: 0 auto;
-    box-sizing: border-box;
     display: grid;
     grid-template-columns: 966px;
     grid-template-rows: 226px 326px 856px 316px;
