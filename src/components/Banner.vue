@@ -1,5 +1,7 @@
 <template>
-    
+    <aside>
+        
+    </aside>
 </template>
 
 <script>

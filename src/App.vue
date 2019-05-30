@@ -1,13 +1,15 @@
 <template>
   <div id="app">
+    <!-- https://tpc.googlesyndication.com/simgad/16268655339236767166 -->
+
     <!-- https://cybercook.com.br/assets/mr-pancake/images/logos/cybercook.svg -->
 
     <!-- https://img.cybercook.com.br/receitas/791/nhoque-de-batata-doce-2.jpeg?fm=jpeg&w=1024 -->
 
-    <Header is='header' heade msg="Welcome to Your Vue.js App"/>
-    <Banner is='aside' banner/> 
-    <Recipes is='main' recipes/>
-    <Feeds is='section' feeds/>
+    <Header  heade msg="Welcome to Your Vue.js App" />
+    <Banner banner/> 
+    <Recipes recipes/>
+    <Feeds feeds/>
 
   </div>
 </template>
@@ -31,7 +33,6 @@ export default {
 </script>
 
 <style>
- *{box-sizing: border-box}
   body {
     margin: 0;
     padding: 0;

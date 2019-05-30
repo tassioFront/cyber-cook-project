@@ -1,9 +1,9 @@
 <template >
-  <div>
+  <header>
     {{ msg }}
-   
+    {{ cc }}
 
-  </div>
+  </header>
 </template>
 
 <script>
@@ -12,6 +12,11 @@ export default {
   name: 'Header',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      cc: 'dd'
+    }
   }
 }
 </script>
