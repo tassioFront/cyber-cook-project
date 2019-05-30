@@ -4,10 +4,10 @@
 
     <!-- https://img.cybercook.com.br/receitas/791/nhoque-de-batata-doce-2.jpeg?fm=jpeg&w=1024 -->
 
-    <Header heade msg="Welcome to Your Vue.js App"/>
-    <Banner banner/> 
-    <Recipes recipes/>
-    <Feeds feeds/>
+    <Header is='header' heade msg="Welcome to Your Vue.js App"/>
+    <Banner is='aside' banner/> 
+    <Recipes is='main' recipes/>
+    <Feeds is='section' feeds/>
 
   </div>
 </template>
