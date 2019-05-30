@@ -3,7 +3,7 @@
     <!-- https://cybercook.com.br/assets/mr-pancake/images/logos/cybercook.svg -->
 
     <!-- https://img.cybercook.com.br/receitas/791/nhoque-de-batata-doce-2.jpeg?fm=jpeg&w=1024 -->
-
+teste
     <Header msg="Welcome to Your Vue.js App"/>
     <Banner/> 
     <Recipes/>
