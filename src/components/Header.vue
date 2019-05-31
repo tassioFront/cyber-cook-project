@@ -1,7 +1,8 @@
 <template >
   <header>
-
-    <img class="banner-1" src="https://tpc.googlesyndication.com/simgad/16268655339236767166" alt="Conheça estes diferentões">    
+    <a class="banner-1" href="https://tpc.googlesyndication.com/simgad/16268655339236767166">
+      <img  src="https://tpc.googlesyndication.com/simgad/16268655339236767166" alt="Conheça estes diferentões">    
+    </a>
 
     <div class="menu">
       <!-- icon -->
@@ -13,12 +14,30 @@
       
         <div class="menu-link">
 
-          <div class="social"></div>
+          <div class="social">
+            <p></p>
+            <a href=""><i></i></a>
+            <a href=""><i></i></a>
+            <a href=""><i></i></a>
+            <a href=""><i></i></a>
+            <a href=""><i></i></a>
+            <a href=""><i></i></a>
+          </div>
           <div class="actions"></div>
         
         </div>
       
-        <nav></nav>
+        <nav>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </nav>
+
       </div>
 
     </div>
@@ -44,7 +63,7 @@ header {
 }
 
 header .banner-1 {
-  margin-bottom: 15px;
+  margin-bottom: 11px;
 }
 
 .menu {
@@ -67,11 +86,13 @@ header .banner-1 {
 
 .menu-link {
   flex-grow: 1;
+  display: flex;
 }
 
-.menu-content nav {
+.menu-link .social,.actions, nav {
   flex-grow: 1;
 }
+
 
 
 
