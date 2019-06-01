@@ -106,10 +106,13 @@ header .banner-1 {
 }
 
 /* menu */
+.menu, .menu-content, .menu-link {
+  display: flex;
+}
+
 .menu {
   width: 100%;
   height: 45.57%;
-  display: flex;
 }
 
 .icon {
@@ -117,27 +120,33 @@ header .banner-1 {
   height: 103px;
 } 
 
-.menu-content {
+.menu-content, .menu-link, .menu-link .social,.actions, .navbar{
   flex-grow: 1;
+}
+
+.menu-content {
   border: 1px solid orange;
-  display: flex;
   flex-direction: column;
 }
 
-.menu-link {
-  flex-grow: 1;
-  display: flex;
+/* menu-content>menu-link and navbar */
+.menu-link, .navbar  {
   height: 50%;
-}
+  display: flex;
+  }
 
-.menu-link .social,.actions, nav {
-  flex-grow: 1;
-}
+
+/* menu-content>menu-link */
+[social], [actions] {width: 100%;}
+
+/*social */
+.social, .social a {
+  display: flex;
+  align-items: center;
+} 
 
 .social {
-  display: flex;
   justify-content: start;
-  align-items: center;
   width: 50%;
   border: 1px solid orange;
 }
@@ -150,14 +159,10 @@ header .banner-1 {
 
 .social a {
   height: 58.25%;
-  width: 10%;
-  display: flex;
-  align-items: center;
+  width: 10%;  
 }
-[social], [actions] {width: 100%;}
 
 /* Actions */
-
 .actions {
   flex-grow: 1;
   display: flex;
@@ -182,6 +187,13 @@ header .banner-1 {
   position: relative;
 }
 
+.notification span, .recipes-book {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
 .notification span {
   position: absolute;
   width: 54.054%;
@@ -189,22 +201,14 @@ header .banner-1 {
   top: -5%;
   border-radius: 50%;
   background: #e74f23;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 12px;
-  color: #fff;
 }
 
 .recipes-book {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 58.034%;
   margin-right: 1.9%;
   background: #fa9e22;
   border-radius: 32.67px;
-  color: #fff;
 }
 
 .recipes-book img {
@@ -226,15 +230,7 @@ header .banner-1 {
 }
 
 
-
-/* NavBar */
-.navbar {
-  border: 1px solid orange;
-  display: flex;
-  height: 50%;
-
-}
-
+/* menu-content>navbar */
 .navbar-list {
   margin: 0%;
   display: flex;
