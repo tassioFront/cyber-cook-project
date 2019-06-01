@@ -11,10 +11,12 @@
             <input type="text" placeholder="Nome ou ingredientes">
             <img src="https://img.icons8.com/ios/38/ffffff/search-filled.png">
           </div>
-
-          <span class="banner-2-chef">
-            <img src="">
-          </span>
+          <div class="banner-2-chef">
+            <h3>
+              Sugestões do Chef: 
+              <span>?</span>
+            </h3>
+          </div>
 
           <div class="banner-2-chef-suggestion">
             <ul>
@@ -85,6 +87,11 @@ export default {
     margin: 0%;
     width: 68.84%;
     height: 15.35%;
+    color: #fff;
+    font-weight: 900;
+    text-shadow: 0 0.06em 0 #191919;
+    font-size: 2.2rem;
+    text-align: center;
   }
 
   .banner-2-search {
@@ -92,6 +99,7 @@ export default {
     height: 18.134%;
     display: flex;
     align-items: center;
+    margin-bottom: 1.2%;
   }
 
   .banner-2-search input {
@@ -109,5 +117,29 @@ export default {
     width: 10%;
     height: 61.1111%; 
     margin-left: 2%;
+  } 
+
+  .banner-2-chef {
+    height: 6.0403%;
+    width: 18%;
+    
   }
+
+  .banner-2-chef h3 {
+    font-size: 0.8rem;
+    color: #fff;
+    margin: 0%;
+    font-weight: 900;
+  }
+
+  .banner-2-chef span {
+    background: #1f8769;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    padding: 0 4px;
+    cursor: pointer;
+    
+  }
+
+
 </style>
