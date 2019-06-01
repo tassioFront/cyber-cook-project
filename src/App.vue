@@ -42,24 +42,19 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     box-sizing: border-box;
-    width: 51.88%; 
+    width: 61.88%; 
     max-width: 996px;
     /* min-width: 500px; */
     margin: 0 auto;
 
     display: flex;
     flex-direction: column;
-
-
-    /* grid-template-columns: 51.88%;
-    grid-template-rows: 226px 326px 856px 316px; */
-    padding: 5px 15px 30px;
+    padding: 5px 10px 30px;
     border: 1px solid orange;
 }
 
   [heade], [banner], [recipes], [feeds] {
     border: 1px solid orange;
-
   }
 
   [heade] {
@@ -72,5 +67,24 @@ export default {
 
   [recipes] {
     padding-bottom: 40px;
+  }
+
+  /* tablet */
+
+  @media(min-width: 769px) {
+
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
   }
 </style>
