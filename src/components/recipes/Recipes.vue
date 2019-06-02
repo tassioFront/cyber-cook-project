@@ -30,33 +30,40 @@
 
           <span class="banner-2-day"> <strong>Receita do dia: </strong>Coxinha de Frango Fritas com alho</span>
         </div> <!-- Banner -->
+      </div>
+      <!-- recipes-list -->
+        <section class="recipes-section">
+          <article class="recipes-section-content" v-for="recipe in recipes" :key="recipe.title" >
+            <a :href='recipe.link'>
+              <img :src="recipe.image" :alt="recipe.title">
+            </a>
 
-        <!-- recipes-list -->
-        <section>
-          <article>
-
+            <span class="recipes-section-content-detail">
+              <h3> {{ recipe.title }} </h3>
+              <span> <img src="" alt=""></span>
+            </span>
           </article>
 
         </section>
+<!-- 
+        "image": "https://img.cybercook.uol.com.br/imagens/receitas/723/carne-louca-305x200.jpg",
+    	"link": "https://cybercook.uol.com.br/carne-louca-r-3-15723.html",
+    	"title": "Carne Louca",
+      "rating": 5 -->
 
-
-      </div>
     </main>
 </template>
 
 <script>
-import data from '../../../public/cybercook.json'
+import recipes from '../../../public/cybercook.json'
 
 
 export default {
     
   data() {
     return {
-      data: data
+      recipes: recipes.recipes
     }
-  },
-  created() {
-    console.log(data)
   }
 
 }
@@ -78,13 +85,14 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    margin-bottom: 28px;
   }
 
   .banner-2-title {
     position: absolute;
     width: 100%;
     height: 100%;
-    padding: 35px 0% 7.0469% 0%;
+    padding-top: 35px;
     margin: 0%;
     display: flex;
     flex-direction: column;
@@ -190,6 +198,41 @@ export default {
   .banner-2-day strong {
     color: #fff;
   }
-  
 
+  /* Recipes */
+  
+  .recipes-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .recipes-section-content {
+    width: 31.1055%;
+    position: relative;
+  }
+
+  .recipes-section-content img {
+    width: 100%;
+    margin-bottom: 26px;
+  }
+
+  .recipes-section-content-detail {
+    position: absolute;
+    left: 2%;
+    bottom: 1%;
+    z-index: 100;
+  }
+
+  .recipes-section-content-detail h3 {
+    margin: 0%;
+    font-size: 0.8rem;
+    color: #fff;
+    text-shadow: 1px 1px #191919;
+  }
+
+  .recipes-section-content-detail span {
+    width: 100%;
+  }
 </style>
