@@ -12,6 +12,7 @@
             <input type="text" placeholder="Nome ou ingredientes">
             <img src="https://img.icons8.com/ios/38/ffffff/search-filled.png">
           </div>
+
           <div class="banner-2-chef">
             <h3>
               Sugestões do Chef: 
@@ -29,15 +30,18 @@
           </div>
 
           <span class="banner-2-day"> <strong>Receita do dia: </strong>Coxinha de Frango Fritas com alho</span>
-        </div> <!-- Banner -->
-      </div>
+        
+        </div> <!-- Banner-2-title -->
+
+      </div><!-- Banner -->
+
       <!-- recipes-list -->
         <section class="recipes-section">
+
           <article class="recipes-section-content" v-for="recipe in recipes" :key="recipe.title"  >
             <a :href='recipe.link'>
               <img :src="recipe.image" :alt="recipe.title">
             </a>
-
 
             <span class="recipes-section-content-detail" :class="recipe.rating == 0 ? 'bottom-rating-1' : 'bottom-rating-2'" >
               <a :href='recipe.link'>
@@ -48,6 +52,7 @@
               </span>
             </span>
           </article>
+
         </section>
 
     </main>
@@ -55,7 +60,6 @@
 
 <script>
 import recipes from '../../../public/cybercook.json'
-
 
 export default {
     
@@ -70,15 +74,17 @@ export default {
 
 <style>
   main {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
     padding: 0% 0% 16px 0%; 
     margin: 0%;
   }
+
+  /* Banner*/
+  .banner-2, .banner-2-title, .banner-2-title h1 {
+    width: 100%;
+  }
+
   .banner-2 {
     background-image: url('https://img.cybercook.com.br/receitas/791/nhoque-de-batata-doce-2.jpeg?fm=jpeg&w=1024');
-    width: 100%;
     height: 278px;
     background-position: center;
     background-repeat: no-repeat;
@@ -89,7 +95,6 @@ export default {
 
   .banner-2-title {
     position: absolute;
-    width: 100%;
     height: 100%;
     padding-top: 35px;
     margin: 0%;
@@ -101,13 +106,16 @@ export default {
   .banner-2-title h1 {
     padding: 0%;
     margin: 1% 0%;
-    width: 68.84%;
     height: 15.35%;
     color: #fff;
     font-weight: 900;
     text-shadow: 0 0.06em 0 #191919;
     font-size: 2.2rem;
     text-align: center;
+  }
+
+  .banner-2-chef, .banner-2-chef-suggestion, .banner-2-day {
+    width: 100%;
   }
 
   .banner-2-search {
@@ -138,7 +146,7 @@ export default {
 
   .banner-2-chef {
     height: 6.0403%;
-    width: 18%;
+    text-align: center;
     margin-bottom: 1.2%;
   
   }
@@ -162,42 +170,39 @@ export default {
   .banner-2-chef-suggestion {
     display: flex;
     justify-content: space-between;
-    width: 46.339%;
     height: 8.0536%;
     font-size: 0.75rem;
     padding: 0%;
     font-weight: 900;
     margin-bottom: 4.3959%;
   }
+
   .banner-2-chef-suggestion ul {
     width: 100%;
     height: 100%;
     margin: 0%;
     display: flex;
     align-items: center;
-
+    justify-content: center;
   }
+
   .banner-2-chef-suggestion li {
     height: 100%;
-    margin: 0 0.5%;
+    margin: 0 0.3%;
     padding: 0% 1%;
     color: #fff;
     background: #fb6300;
     display: flex;
     align-items: center;
-    cursor: pointer;
   }
 
   .banner-2-day{
     font-size: 0.72rem;
     margin-bottom: 2%;
-    margin-left: 45%;
     color: #fff;
     opacity: 0.8;
-  }
-
-  .banner-2-day strong {
-    color: #fff;
+    text-align: end;
+    padding-right: 18%;
   }
 
   /* Recipes */
@@ -211,7 +216,7 @@ export default {
 
   .recipes-section-content {
     width: 31.1055%;
-    margin-bottom: 20px;
+    margin-bottom: 2%;
     position: relative;
   }
 
@@ -239,13 +244,15 @@ export default {
   .recipes-section-content-detail span {
     width: 100%;
   }
+
   .recipes-section-content-detail span img{
     width: 15px;
   }
 
   .bottom-rating-1 {
-    bottom: 25%;
+    bottom: 24%;
   }
+
   .bottom-rating-2 {
     bottom: 1%;
   }

@@ -1,12 +1,7 @@
 <template>
   <div id="app">
-    <!-- https://tpc.googlesyndication.com/simgad/16268655339236767166 -->
-
-    <!--Icone https://cybercook.com.br/assets/mr-pancake/images/logos/cybercook.svg -->
-
-    <!-- https://img.cybercook.com.br/receitas/791/nhoque-de-batata-doce-2.jpeg?fm=jpeg&w=1024 -->
-
-    <Header  heade msg="Welcome to Your Vue.js App" />
+  
+    <Header  heade />
     <Recipes recipes/>
     <Feeds feeds/>
 
@@ -20,7 +15,6 @@ import Feeds from './components/feeds/Feeds'
 
 
 export default {
-  name: 'app',
   components: {
     Header,
     Recipes,
@@ -46,28 +40,22 @@ export default {
     max-width: 996px;
     /* min-width: 500px; */
     margin: 0 auto;
-
     display: flex;
     flex-direction: column;
     padding: 5px 10px 30px;
     border: 1px solid orange;
 }
 
-  [heade], [banner], [recipes], [feeds] {
+  [heade], [recipes], [feeds] {
     border: 1px solid orange;
-  }
-
-  [heade] {
-    padding-bottom: 10px;
-  }
-
-  [banner] {
-    padding-bottom: 28px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   /* tablet */
 
-  @media(min-width: 769px) {
+  @media(min-width: 1040px) {
 
   }
   
@@ -77,10 +65,11 @@ export default {
   }
   li {
     display: inline-block;
+    cursor: pointer;
   }
 
-  a {
+  a, img {
     text-decoration: none;
-    color: black;
+    cursor: pointer;
   }
 </style>

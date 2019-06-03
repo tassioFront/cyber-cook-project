@@ -37,7 +37,7 @@
             <div class="book-create"> <span> Criar seu Livro </span></div>
           </div>
         
-         </div> <!-- menu contente -->
+         </div> <!-- menu content-->
       
         <nav class="navbar">
           <ul class="navbar-list">
@@ -90,9 +90,8 @@ export default {
 <style scoped>
 
 header {
-  display: flex;
-  flex-direction: column;
   align-items: center;
+  padding-bottom: 10px;
 }
 
 /* advertising */
@@ -174,7 +173,6 @@ header .banner-1 {
 
 .search, .notification, .recipes-book, .book-create {
   height: 66.019%;
-  cursor: pointer;
 }
 
 .search, .notification {
@@ -209,6 +207,7 @@ header .banner-1 {
   margin-right: 1.9%;
   background: #fa9e22;
   border-radius: 32.67px;
+  cursor: pointer;
 }
 
 .recipes-book img {
@@ -227,6 +226,7 @@ header .banner-1 {
   background: #e74f23;
   border-radius: 32.67px;
   color: #fff;
+  cursor: pointer;
 }
 
 
@@ -256,7 +256,6 @@ header .banner-1 {
   position: relative;
   display: flex;
   align-items: center;
-  cursor: pointer;
 }
 
 .navbar-content img {
