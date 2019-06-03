@@ -30,16 +30,24 @@ export default {
     background: #fff;
 
   }
+
+  @media (min-width: 1100px) {
     
+    #app {
+      width: 61.88%; 
+      max-width: 996px;
+      min-width: 957.547px;
+    }
+
+  }
+
   #app {
     font-family: 'Kadwa', Georgia, serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     box-sizing: border-box;
-    width: 61.88%; 
-    max-width: 996px;
-    /* min-width: 500px; */
     margin: 0 auto;
+    width: 90%;
     display: flex;
     flex-direction: column;
     padding: 5px 10px 30px;
@@ -55,7 +63,7 @@ export default {
 
   /* tablet */
 
-  @media(max-width: 1024px) {
+  @media(max-width: 900px) {
     #app {
       width: 100%;
     }

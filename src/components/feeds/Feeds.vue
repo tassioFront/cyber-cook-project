@@ -69,4 +69,18 @@ export default {
         height: 161px;
     }
 
+    @media(max-width: 768px) {
+    .feeds {
+      justify-content: space-around;
+
+    }
+
+    .feeds-content {
+      width: 40%;
+    }
+
+    .feeds-content img {
+      height: 200px;
+    }
+  }
 </style>

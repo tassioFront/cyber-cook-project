@@ -105,7 +105,7 @@ export default {
 
   .banner-2-title h1 {
     padding: 0%;
-    margin: 1% 0% 2%;
+    margin: 0% 0% 2%;
     height: 15.35%;
     color: #fff;
     font-weight: 900;
@@ -174,7 +174,7 @@ export default {
     font-size: 0.75rem;
     padding: 0%;
     font-weight: 900;
-    margin-bottom: 4.3959%;
+    margin-bottom: 3%;
   }
 
   .banner-2-chef-suggestion ul {
@@ -256,4 +256,15 @@ export default {
   .bottom-rating-2 {
     bottom: 1%;
   }
+
+  @media(max-width: 768px) {
+    .recipes-section {
+      flex-direction: column;
+    }
+    .recipes-section-content {
+      width: 100%;
+      height: 300px;
+    }
+  }
+
 </style>
