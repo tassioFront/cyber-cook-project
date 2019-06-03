@@ -33,23 +33,22 @@
       </div>
       <!-- recipes-list -->
         <section class="recipes-section">
-          <article class="recipes-section-content" v-for="recipe in recipes" :key="recipe.title" >
+          <article class="recipes-section-content" v-for="recipe in recipes" :key="recipe.title"  >
             <a :href='recipe.link'>
               <img :src="recipe.image" :alt="recipe.title">
             </a>
 
-            <span class="recipes-section-content-detail">
-              <h3> {{ recipe.title }} </h3>
-              <span> <img src="" alt=""></span>
+
+            <span class="recipes-section-content-detail" :class="recipe.rating == 0 ? 'bottom-rating-1' : 'bottom-rating-2'" >
+              <a :href='recipe.link'>
+                <h3> {{ recipe.title }} </h3>
+              </a>
+              <span v-if="recipe.rating > 0">
+                <img  v-for="score in recipe.rating" :key="score" src="https://img.icons8.com/material/24/fa9e22/star.png">
+              </span>
             </span>
           </article>
-
         </section>
-<!-- 
-        "image": "https://img.cybercook.uol.com.br/imagens/receitas/723/carne-louca-305x200.jpg",
-    	"link": "https://cybercook.uol.com.br/carne-louca-r-3-15723.html",
-    	"title": "Carne Louca",
-      "rating": 5 -->
 
     </main>
 </template>
@@ -221,7 +220,6 @@ export default {
   .recipes-section-content-detail {
     position: absolute;
     left: 2%;
-    bottom: 1%;
     z-index: 100;
   }
 
@@ -230,9 +228,21 @@ export default {
     font-size: 0.8rem;
     color: #fff;
     text-shadow: 1px 1px #191919;
+    margin-bottom: 8px;
+    cursor: pointer;
   }
 
   .recipes-section-content-detail span {
     width: 100%;
+  }
+  .recipes-section-content-detail span img{
+    width: 15px;
+  }
+
+  .bottom-rating-1 {
+    bottom: 27%;
+  }
+  .bottom-rating-2 {
+    bottom: 5%;
   }
 </style>
