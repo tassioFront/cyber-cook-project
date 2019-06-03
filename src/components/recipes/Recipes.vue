@@ -105,12 +105,12 @@ export default {
 
   .banner-2-title h1 {
     padding: 0%;
-    margin: 1% 0%;
+    margin: 1% 0% 2%;
     height: 15.35%;
     color: #fff;
     font-weight: 900;
     text-shadow: 0 0.06em 0 #191919;
-    font-size: 2.2rem;
+    font-size: 2.7rem;
     text-align: center;
   }
 

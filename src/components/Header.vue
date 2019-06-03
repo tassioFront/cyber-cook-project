@@ -158,11 +158,12 @@ header .banner-1 {
 
 .social a {
   height: 58.25%;
-  width: 10%;  
+  width: 8%;  
 }
 
 /* Actions */
 .actions {
+  
   flex-grow: 1;
   display: flex;
   align-items: center;
@@ -194,7 +195,8 @@ header .banner-1 {
 
 .notification span {
   position: absolute;
-  width: 54.054%;
+  width: 48.054%;
+  height: 52%;
   left: -5%;
   top: -5%;
   border-radius: 50%;

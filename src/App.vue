@@ -55,8 +55,10 @@ export default {
 
   /* tablet */
 
-  @media(min-width: 1040px) {
-
+  @media(max-width: 1024px) {
+    #app {
+      width: 100%;
+    }
   }
   
   ul {
