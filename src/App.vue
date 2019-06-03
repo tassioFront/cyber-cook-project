@@ -65,10 +65,6 @@ export default {
     padding-bottom: 28px;
   }
 
-  [recipes] {
-    padding-bottom: 40px;
-  }
-
   /* tablet */
 
   @media(min-width: 769px) {

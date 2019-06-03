@@ -73,13 +73,13 @@ export default {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 0%;
+    padding: 0% 0% 16px 0%; 
     margin: 0%;
   }
   .banner-2 {
     background-image: url('https://img.cybercook.com.br/receitas/791/nhoque-de-batata-doce-2.jpeg?fm=jpeg&w=1024');
     width: 100%;
-    height: 298px;
+    height: 278px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -133,6 +133,7 @@ export default {
     width: 10%;
     height: 61.1111%; 
     margin-left: 2%;
+    cursor: pointer;
   } 
 
   .banner-2-chef {
@@ -184,6 +185,7 @@ export default {
     background: #fb6300;
     display: flex;
     align-items: center;
+    cursor: pointer;
   }
 
   .banner-2-day{
@@ -209,10 +211,12 @@ export default {
 
   .recipes-section-content {
     width: 31.1055%;
+    margin-bottom: 20px;
     position: relative;
   }
 
   .recipes-section-content img {
+    height: 95%;
     width: 100%;
     margin-bottom: 26px;
   }
@@ -240,9 +244,9 @@ export default {
   }
 
   .bottom-rating-1 {
-    bottom: 27%;
+    bottom: 25%;
   }
   .bottom-rating-2 {
-    bottom: 5%;
+    bottom: 1%;
   }
 </style>
