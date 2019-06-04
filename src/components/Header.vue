@@ -380,7 +380,7 @@ export default {
     }
 
     .actions::after {
-      content: 'menu';
+      content: 'MENU';
       width: 70%;
       height: 40px;
       display: flex;
@@ -388,7 +388,7 @@ export default {
       justify-content: center;
       margin: 2px auto 2px;
       border: 1.5px solid rgb(70, 64, 64);
-      box-shadow: 1px 0 #888888;
+      box-shadow: 1.5px 1px #888888;
       border-radius: 4px;
     }
 

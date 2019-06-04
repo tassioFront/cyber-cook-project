@@ -76,7 +76,8 @@ export default {
     }
 
     .feeds-content {
-      width: 40%;
+        width: 48%;
+        min-width: 267px;
     }
 
     .feeds-content img {
