@@ -313,17 +313,106 @@ export default {
 
     .social, .actions {
       justify-content: center;
+      max-height: 40px;
+    }
+
+    .social {
+      width: 100%;
+    }
+
+    .actions {
+      width: 50%;
+      flex-wrap: wrap;
+      margin-bottom: 20%;
+    }
+
+    .search {
+      margin-left: 20%;
+      height: 30px;
+      margin-bottom: 6px;
+    }
+
+    .notification {
+      margin-right: 20%;
+      height: 30px;
+      margin-bottom: 2.5%;
+    }
+
+    .social img {
+      max-width: 40px;
+    }
+
+    .recipes-book, .book-create {
+      min-height: 32px;
+    }
+
+    .recipes-book {
+      min-width: 215.88px;
+      margin-bottom: 2px;
+    }
+
+    .book-create {
+      min-width: 169.97px
+    }
+
+    .navbar {
+      display: none;
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: 200%;
+      background: rgba(71, 73, 71, 0.95);
+      align-items: center;
+      z-index: 300;
+      
+    }
+
+    .navbar::before {
+      content: 'x' ;
+      top: 3%;
+      right: 3%;
+      position: absolute;
+      font-size: 1.3rem;
+      border: 2px solid #fff;
+      color: #fff;  
+      padding: 1%;
+    }
+
+    .actions::after {
+      content: 'menu';
       width: 70%;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 2px auto 2px;
+      border: 1.5px solid rgb(70, 64, 64);
+      box-shadow: 1px 0 #888888;
+      border-radius: 4px;
     }
 
     .navbar-list {
       align-items: center;
       flex-direction: column;
+      height: 80%;
+      margin-top: 5%;
     }
 
     .navbar-list li {
-          margin: 1% 1.1387%;
+      margin: 2.5% 1.1387%;
     }
+
+    .navbar-list li a {
+      color: #fff;
+    }
+  }
+
+  
+  @media(max-width: 542px) {
+    header {
+      margin-bottom: 40px;
+    } 
   }
 
 </style>

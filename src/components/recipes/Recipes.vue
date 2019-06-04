@@ -258,6 +258,33 @@ export default {
   }
 
   @media(max-width: 768px) {
+    .banner-2-title {
+      padding-top: 5px;
+    }
+
+    .banner-2-title h1 {
+      margin-bottom: 5%;  
+    }
+
+    .banner-2-search {
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 5%;
+    }
+
+    .banner-2-search input {
+      height: 50px;
+    }
+
+    .banner-2-search img {
+      max-width: 30px;
+    }
+
+    .banner-2-day {
+      text-align: center;
+      padding-right: 0%;
+    }
+
     .recipes-section {
       flex-direction: column;
     }
@@ -265,6 +292,20 @@ export default {
       width: 100%;
       height: 300px;
     }
+
+
   }
+
+  @media(max-width: 672px) {
+    .banner-2 {
+      height: 400px;
+    }
+  }
+
+  .banner-2-title h1 {
+      margin-bottom: 60px; 
+      font-size: 2.4rem; 
+  }
+
 
 </style>
