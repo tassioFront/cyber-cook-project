@@ -25,16 +25,16 @@
           </div>
 
           <div class="actions">
-            <div class="search"> <img actions src="https://img.icons8.com/ios/38/fa9e22/search-filled.png"></div>
-            <div class="notification">
+            <div @click="search(true)" class="search"> <img actions src="https://img.icons8.com/ios/38/fa9e22/search-filled.png"></div>
+            <div @click="news($event)" class="notification">
               <img actions src="https://img.icons8.com/material-rounded/24/fa9e22/appointment-reminders.png">
               <span>1</span>
             </div>
-            <div class="recipes-book">
+            <div @click="news($event)" class="recipes-book">
               <img src="https://img.icons8.com/metro/26/ffffff/hearts.png">
               <span>Livro de Receitas</span>
             </div>
-            <div class="book-create"> <span> Criar seu Livro </span></div>
+            <div @click="news($event)" class="book-create"> <span> Criar seu Livro </span></div>
           </div>
         
          </div> <!-- menu content-->
@@ -79,8 +79,18 @@
 </template>
 
 <script>
+import eventBus from '@/helpers/eventBus'
+
 export default {
-  
+    methods: {
+      news(event) {
+            const name = event.path[1].className
+            name ? alert(`Direciona para ${name.toUpperCase()}`) : name
+      },
+      search(click) {
+        eventBus.makeSearch(click)
+      }
+    }
   
 }
 </script>

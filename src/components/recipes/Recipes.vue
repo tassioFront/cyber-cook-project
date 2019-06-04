@@ -9,7 +9,7 @@
 
           <!-- search -->
           <div class="banner-2-search">
-            <input type="search" @input="recipeInputed = $event.target.value" placeholder="Nome ou ingredientes">
+            <input ref="search" type="search" @input="recipeInputed = $event.target.value" placeholder="Nome ou ingredientes">
             <img src="https://img.icons8.com/ios/38/ffffff/search-filled.png">
           </div>
 
@@ -60,6 +60,7 @@
 
 <script>
 import data from '../../../public/cybercook.json'
+import eventBus from '@/helpers/eventBus'
 
 export default {
     
@@ -84,6 +85,13 @@ export default {
           return this.recipes;
         }
     }
+  },
+  created() {
+    eventBus.onMakeSearch( click => {
+      if (click) {
+        this.$refs.search.focus()
+      }
+    })
   }
 
 }
