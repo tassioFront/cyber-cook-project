@@ -37,7 +37,7 @@
 
       <!-- recipes-list -->
         <section class="recipes-section">
-          
+          <div noRecipe v-if="!noRecipe == ''"> <h5> {{ noRecipe }}</h5></div>
           <article class="recipes-section-content" v-for="recipe in filterRecipe" :key="recipe.title"  >
             <a :href='recipe.link'>
               <img :src="recipe.image" :alt="recipe.title">
@@ -67,14 +67,19 @@ export default {
     return {
       recipes: data.recipes,
       recipeInputed: '',
-      noRecipes: ''
+      noRecipe: ''
     }
   },
   computed: {
     filterRecipe() {
         if(this.recipeInputed) {
+
           const exp = new RegExp(this.recipeInputed.trim(), 'i');
-          return this.recipes.filter(recipe => exp.test(recipe.title));
+          const filtered = this.recipes.filter(recipe => exp.test(recipe.title));
+          console.log(filtered)
+           filtered.length == 0 ? this.noRecipe = 'Desculpe, não encontramos essa receita  :{( ' : this.noRecipe = ''
+            
+          return filtered
         } else {
           return this.recipes;
         }
@@ -222,6 +227,16 @@ export default {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+  }
+
+   /* noRecipe */
+  [noRecipe] {
+    width: 100%;
+    background: rgba(236, 86, 86, 0.5);
+    color: #fff;
+    text-align: center;
+    font-size: 1.3rem;
+    border-radius: 4px;
   }
 
   .recipes-section-content {
