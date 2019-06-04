@@ -37,13 +37,13 @@
             <div @click="news($event)" class="book-create"> <span> Criar seu Livro </span></div>
           </div>
         
-         </div> <!-- menu content-->
+        </div> <!-- menu link-->
       
         <nav class="navbar">
           <ul class="navbar-list">
             <li class="navbar-content"> <a href="">Receitas</a> 
-              <img src="https://img.icons8.com/android/50/fa9e22/sort-down.png">
-              <ul class="navbar-content-detail">
+              <img @click="detail1 = !detail1" src="https://img.icons8.com/android/50/fa9e22/sort-down.png" alt="detail1">
+              <ul class="navbar-content-detail" :class= "fun">
                 <li> <a>Opção 1</a></li>
                 <li> <a>Opção 2</a></li>
                 <li> <a>Opção 3</a></li>
@@ -52,16 +52,16 @@
             <li> <a href="">CookClub</a> </li>
             <li> <a href="">#FoodieFeed</a> </li>
             <li class="navbar-content"> <a href="">#TeamCook</a> 
-              <img src="https://img.icons8.com/android/50/fa9e22/sort-down.png">
-              <ul class="navbar-content-detail">
+              <img @click="detail2 = !detail2" src="https://img.icons8.com/android/50/fa9e22/sort-down.png" alt="detail2">
+              <ul  class="navbar-content-detail" :class= "fun">
                 <li> <a>Opção 1</a></li>
                 <li> <a>Opção 2</a></li>
                 <li> <a>Opção 3</a></li>
               </ul>
             </li>
             <li class="navbar-content"> <a href="">Vídeo</a>
-              <img src="https://img.icons8.com/android/50/fa9e22/sort-down.png">
-              <ul class="navbar-content-detail">
+              <img @click="detail3 = !detail3" src="https://img.icons8.com/android/50/fa9e22/sort-down.png" alt="detail3">
+              <ul class="navbar-content-detail" :class= "fun">
                 <li> <a>Opção 1</a></li>
                 <li> <a>Opção 2</a></li>
                 <li> <a>Opção 3</a></li>
@@ -71,9 +71,9 @@
           </ul>
         </nav>
 
-      </div>
+      </div> <!-- menu content -->
 
-    </div>
+    </div> <!--menu-->
 
   </header>
 </template>
@@ -82,6 +82,21 @@
 import eventBus from '@/helpers/eventBus'
 
 export default {
+    data() {
+      return {
+        detail1: true,
+        detail2: true,
+        detail3: true
+      }
+    },
+    computed: {
+
+      fun() {
+        
+        
+          
+      }
+    },
     methods: {
       news(event) {
             const name = event.path[1].className
@@ -90,6 +105,21 @@ export default {
       search(click) {
         eventBus.makeSearch(click)
       }
+      // navbarDetail(even) {
+      //   // console.log(even.path[0].alt)
+      //   // this.$refs.search.focus()
+      //   switch(even.path[0].alt) {
+      //     case 'detail1':
+      //         this.detail1 = true
+      //       break;
+      //     case 'detail2':
+      //         this.detail2 = true
+      //       break;
+      //     case 'detail3':
+      //         this.detail3 = true
+      //       break
+      //     }
+      // }   
     }
   
 }
@@ -97,7 +127,9 @@ export default {
 
 
 <style scoped>
-
+  .c {
+    display: none;
+  }
   header {
     align-items: center;
     padding-bottom: 10px;
@@ -270,7 +302,7 @@ export default {
   }
 
   .navbar-content-detail {
-    display: none;
+    
     position: absolute;
     z-index: 100;
     top: 100%;
