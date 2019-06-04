@@ -209,6 +209,7 @@ export default {
     background: #fb6300;
     display: flex;
     align-items: center;
+    text-align: center;
   }
 
   .banner-2-day{
