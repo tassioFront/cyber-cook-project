@@ -10,6 +10,11 @@ npm install
 npm run serve
 ```
 
+### In "App running at" there is a Network IP, you can put it in your smartphone/tablet since you device is in the same wi-fi:
+```
+npm run serve
+```
+
 ### Compiles and minifies for production
 ```
 npm run build
