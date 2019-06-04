@@ -1,9 +1,9 @@
 <template>
   <div id="app">
   
-    <Header  heade />
-    <Recipes recipes/>
-    <Feeds feeds/>
+    <Header  heade /> <!-- includes from first banner until navbar -->
+    <Recipes recipes/> <!-- includes from second banner until recipes content-->
+    <Feeds feeds/> <!-- includes FoodieFeed only-->
 
   </div>
 </template>
@@ -28,9 +28,9 @@ export default {
     margin: 0;
     padding: 0;
     background: #fff;
-
   }
 
+  /* large laptops */
   @media (min-width: 1100px) {
     
     #app {
@@ -51,11 +51,9 @@ export default {
     display: flex;
     flex-direction: column;
     padding: 5px 10px 30px;
-    border: 1px solid orange;
 }
 
   [heade], [recipes], [feeds] {
-    border: 1px solid orange;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -73,6 +71,7 @@ export default {
     list-style-type: none;
     padding: 0;
   }
+
   li {
     display: inline-block;
     cursor: pointer;
@@ -82,4 +81,5 @@ export default {
     text-decoration: none;
     cursor: pointer;
   }
+  
 </style>

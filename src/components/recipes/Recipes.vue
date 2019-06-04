@@ -1,15 +1,15 @@
 <template>
     <main class="content-recipes">
       <!-- Banner -->
-      <div class='banner-2' >
+      <div class='banner-2' > <!-- banner image is here -->
         
-        <div class="banner-2-title">
+        <div class="banner-2-title"> <!-- content banner -->
 
           <h1> Encontre Receitas deliciosas!</h1>
 
           <!-- search -->
           <div class="banner-2-search">
-            <input type="text" placeholder="Nome ou ingredientes">
+            <input type="search" @input="recipeInputed = $event.target.value" placeholder="Nome ou ingredientes">
             <img src="https://img.icons8.com/ios/38/ffffff/search-filled.png">
           </div>
 
@@ -37,13 +37,13 @@
 
       <!-- recipes-list -->
         <section class="recipes-section">
-
-          <article class="recipes-section-content" v-for="recipe in recipes" :key="recipe.title"  >
+          
+          <article class="recipes-section-content" v-for="recipe in filterRecipe" :key="recipe.title"  >
             <a :href='recipe.link'>
               <img :src="recipe.image" :alt="recipe.title">
             </a>
 
-            <span class="recipes-section-content-detail" :class="recipe.rating == 0 ? 'bottom-rating-1' : 'bottom-rating-2'" >
+            <span class="recipes-section-content-detail" :class="recipe.rating == 0 ? 'bottom-rating-1' : 'bottom-rating-2'" >   <!-- these both class will be defined by Vue, depending of rating -->
               <a :href='recipe.link'>
                 <h3> {{ recipe.title }} </h3>
               </a>
@@ -59,20 +59,32 @@
 </template>
 
 <script>
-import recipes from '../../../public/cybercook.json'
+import data from '../../../public/cybercook.json'
 
 export default {
     
   data() {
     return {
-      recipes: recipes.recipes
+      recipes: data.recipes,
+      recipeInputed: '',
+      noRecipes: ''
+    }
+  },
+  computed: {
+    filterRecipe() {
+        if(this.recipeInputed) {
+          const exp = new RegExp(this.recipeInputed.trim(), 'i');
+          return this.recipes.filter(recipe => exp.test(recipe.title));
+        } else {
+          return this.recipes;
+        }
     }
   }
 
 }
 </script>
 
-<style>
+<style scoped>
   main {
     padding: 0% 0% 16px 0%; 
     margin: 0%;
@@ -93,6 +105,7 @@ export default {
     margin-bottom: 28px;
   }
 
+  /* .banner-2>.banner-2-title */
   .banner-2-title {
     position: absolute;
     height: 100%;
@@ -141,14 +154,12 @@ export default {
     width: 10%;
     height: 61.1111%; 
     margin-left: 2%;
-    cursor: pointer;
   } 
 
   .banner-2-chef {
     height: 6.0403%;
     text-align: center;
     margin-bottom: 1.2%;
-  
   }
 
   .banner-2-chef h3 {
@@ -164,17 +175,16 @@ export default {
     font-size: 0.75rem;
     padding: 0 4px;
     cursor: pointer;
-    
   }
 
   .banner-2-chef-suggestion {
-    display: flex;
-    justify-content: space-between;
     height: 8.0536%;
     font-size: 0.75rem;
     padding: 0%;
     font-weight: 900;
     margin-bottom: 3%;
+    display: flex;
+    justify-content: space-between;
   }
 
   .banner-2-chef-suggestion ul {
@@ -206,7 +216,7 @@ export default {
   }
 
   /* Recipes */
-  
+  /* .banner-2>.recipes-section*/
   .recipes-section {
     width: 100%;
     display: flex;
@@ -249,14 +259,16 @@ export default {
     width: 15px;
   }
 
+  /* these both class will be defined by Vue, depending of rating */
   .bottom-rating-1 {
-    bottom: 24%;
+    bottom: 21%;
   }
 
   .bottom-rating-2 {
     bottom: 1%;
   }
 
+  /* tablet */
   @media(max-width: 768px) {
     .banner-2-title {
       padding-top: 5px;
@@ -293,18 +305,18 @@ export default {
       height: 300px;
     }
 
-
   }
 
+  /*smaller tablet and so on */
   @media(max-width: 672px) {
     .banner-2 {
       height: 400px;
     }
-  }
-
-  .banner-2-title h1 {
-      margin-bottom: 60px; 
-      font-size: 2.4rem; 
+  
+    .banner-2-title h1 {
+        margin-bottom: 60px; 
+        font-size: 2.4rem; 
+    }
   }
 
 

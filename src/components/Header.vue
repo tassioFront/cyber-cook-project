@@ -79,7 +79,6 @@
 </template>
 
 <script>
-
 export default {
   
   
@@ -122,8 +121,8 @@ export default {
     flex-grow: 1;
   }
 
+  /* .menu-content */
   .menu-content {
-    border: 1px solid orange;
     flex-direction: column;
   }
 
@@ -146,7 +145,6 @@ export default {
   .social {
     justify-content: start;
     width: 50%;
-    border: 1px solid orange;
   }
 
   .social span {
@@ -163,11 +161,10 @@ export default {
   /* Actions */
   .actions { 
     flex-grow: 1;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 50%;
-    border: 1px solid orange;
   }
 
   .search, .notification, .recipes-book, .book-create {
@@ -185,10 +182,10 @@ export default {
   }
 
   .notification span, .recipes-book {
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
   }
 
   .notification span {
@@ -220,21 +217,21 @@ export default {
 
   .book-create {
     width: 45.693%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background: #e74f23;
     border-radius: 32.67px;
     color: #fff;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
 
   /* menu-content>navbar */
   .navbar-list {
     margin: 0%;
-    display: flex;
     flex-grow: 1;
+    display: flex;
     align-items: flex-end;
   }
 
@@ -272,15 +269,16 @@ export default {
     background: #fff;
     border: 5px solid rgb(238, 230, 230);
     border-radius: 4px;
+    padding-left: 2px;
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 2px;
   }
 
   .navbar-content-detail li {
     padding: 2px 0%;
   }
 
+  /* tablet */
   @media(max-width: 900px) {
     header .banner-1 {
       width: 100%;
@@ -393,10 +391,10 @@ export default {
     }
 
     .navbar-list {
-      align-items: center;
-      flex-direction: column;
       height: 80%;
       margin-top: 5%;
+      align-items: center;
+      flex-direction: column;
     }
 
     .navbar-list li {
@@ -408,7 +406,7 @@ export default {
     }
   }
 
-  
+  /*smaller devices */
   @media(max-width: 542px) {
     header {
       margin-bottom: 40px;

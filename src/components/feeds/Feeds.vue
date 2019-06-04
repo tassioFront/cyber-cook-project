@@ -1,5 +1,5 @@
 <template>
-<!-- it was defined as footer tag because is the last content of PSD, otherwise, it will be defined as aside tag -->
+<!-- it was defined as footer tag because it is the last content of PSD, otherwise, it will be defined as aside tag -->
     <footer>
 
         <h2>#FoodieFeed</h2>
@@ -31,7 +31,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     footer {
         justify-content: flex-start;
     }
@@ -69,6 +69,7 @@ export default {
         height: 161px;
     }
 
+    /* tablet and other */
     @media(max-width: 768px) {
     .feeds {
       justify-content: space-around;
