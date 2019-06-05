@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app"> <!--container-->
   
-    <Header  heade /> <!-- includes from first banner until navbar -->
+    <Header  head /> <!-- includes from first banner until navbar -->
     <Recipes recipes/> <!-- includes from second banner until recipes content-->
     <Feeds feeds/> <!-- includes FoodieFeed only-->
 
@@ -41,6 +41,7 @@ export default {
 
   }
 
+  /* container */
   #app {
     font-family: 'Kadwa', Georgia, serif;
     -webkit-font-smoothing: antialiased;
@@ -51,9 +52,9 @@ export default {
     display: flex;
     flex-direction: column;
     padding: 5px 10px 30px;
-}
+  }
 
-  [heade], [recipes], [feeds] {
+  [head], [recipes], [feeds] {
     width: 100%;
     display: flex;
     flex-direction: column;

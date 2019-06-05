@@ -35,13 +35,14 @@
               <span>Livro de Receitas</span>
             </div>
             <div @click="news($event)" class="book-create"> <span> Criar seu Livro </span></div>
+          <span @click="toggle($event)" class="btn-menu"> MENU </span> <!-- small devices only -->
           </div>
-        
         </div> <!-- menu link-->
       
-        <nav class="navbar">
+        <nav ref="nav" class="navbar">
+          <span @click="toggle($event)" class="btn-close"> X </span> <!-- small devices only -->
           <ul class="navbar-list">
-            <li ref="detail1" @click="teste($event)" class="navbar-content"> <a>Receitas</a> 
+            <li ref="detail1" @click="toggle($event)" class="navbar-content"> <a>Receitas</a> 
               <img  src="https://img.icons8.com/android/50/fa9e22/sort-down.png">
               <ul class="navbar-content-detail" :class= "{none: detail1 }">
                 <li> <a>Opção 1</a></li>
@@ -51,7 +52,7 @@
             </li>
             <li> <a href="">CookClub</a> </li>
             <li> <a href="">#FoodieFeed</a> </li>
-            <li ref="detail2" @click="teste($event)" class="navbar-content"> <a >#TeamCook</a> 
+            <li ref="detail2" @click="toggle($event)" class="navbar-content"> <a >#TeamCook</a> 
               <img src="https://img.icons8.com/android/50/fa9e22/sort-down.png">
               <ul  class="navbar-content-detail"  :class= "{none: detail2 }">
                 <li> <a>Opção 1</a></li>
@@ -59,7 +60,7 @@
                 <li> <a>Opção 3</a></li>
               </ul>
             </li>
-            <li ref="detail3" @click="teste($event)" class="navbar-content"> <a >Vídeo</a>
+            <li ref="detail3" @click="toggle($event)" class="navbar-content"> <a >Vídeo</a>
               <img src="https://img.icons8.com/android/50/fa9e22/sort-down.png">
               <ul class="navbar-content-detail" :class = "{none: detail3}" >
                 <li> <a>Opção 1</a></li>
@@ -86,18 +87,24 @@ export default {
       return {
         detail1: true,
         detail2: true,
-        detail3: true
+        detail3: true,
+        navBar: false
       }
     },
     methods: {
-      teste(e) {
-            
+      toggle(e) {
         if (e.path[0].outerText === 'Receitas') {
             this.detail1 = !this.detail1
         } else if (e.path[0].outerText === '#TeamCook') {
             this.detail2 = !this.detail2
         } else if (e.path[0].outerText === 'Vídeo') {
             this.detail3 = !this.detail3
+        } else if (e.path[0].outerText === 'MENU') {
+            this.navBar === true ? this.$refs.nav.style.display = 'block' : this.navBar 
+            this.navBar = !this.navBar
+        } else if (e.path[0].outerText === 'X') {
+            this.navBar === false ? this.$refs.nav.style.display = 'none' : this.navBar 
+            this.navBar = !this.navBar
         }
       },
       news(event) {
@@ -258,6 +265,10 @@ export default {
     justify-content: center;
   }
 
+  .btn-menu, .btn-close {
+    display: none;
+  }
+
 
   /* menu-content>navbar */
   .navbar-list {
@@ -360,15 +371,17 @@ export default {
       margin-bottom: 20%;
     }
 
-    .search {
+    .search, .notification {
       margin-left: 20%;
       height: 30px;
-      margin-bottom: 6px;
+      width: 30px;
     }
 
+    .search {
+      margin-bottom: 6px;
+    }
+    
     .notification {
-      margin-right: 20%;
-      height: 30px;
       margin-bottom: 2.5%;
     }
 
@@ -399,22 +412,23 @@ export default {
       background: rgba(71, 73, 71, 0.95);
       align-items: center;
       z-index: 300;
+      padding-top: 10%;
       
     }
 
-    .navbar::before {
-      content: 'x' ;
+    .btn-close {
       top: 3%;
       right: 3%;
+      display: block;
       position: absolute;
       font-size: 1.3rem;
-      border: 2px solid #fff;
-      color: #fff;  
+      border: 2px solid #e75024;;
+      color: #e75024;;  
       padding: 1%;
+      border-radius: 50%;
     }
 
-    .actions::after {
-      content: 'MENU';
+    .btn-menu {
       width: 70%;
       height: 40px;
       display: flex;
@@ -434,11 +448,7 @@ export default {
     }
 
     .navbar-list li {
-      margin: 2.5% 1.1387%;
-    }
-
-    .navbar-list li a {
-      color: #fff;
+      margin: 4% 1.1387%;
     }
   }
 
