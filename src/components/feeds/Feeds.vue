@@ -72,17 +72,17 @@ export default {
     /* tablet and other */
     @media(max-width: 768px) {
     .feeds {
-      justify-content: space-around;
+        justify-content: space-around;
 
     }
 
     .feeds-content {
-        width: 48%;
+    width: 48%;
         min-width: 267px;
     }
 
     .feeds-content img {
-      height: 200px;
+        height: 200px;
     }
   }
 </style>
