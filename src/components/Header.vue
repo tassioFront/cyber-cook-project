@@ -41,9 +41,9 @@
       
         <nav class="navbar">
           <ul class="navbar-list">
-            <li class="navbar-content"> <a href="">Receitas</a> 
-              <img @click="detail1 = !detail1" src="https://img.icons8.com/android/50/fa9e22/sort-down.png" alt="detail1">
-              <ul class="navbar-content-detail" :class= "fun">
+            <li ref="detail1" @click="teste($event)" class="navbar-content"> <a>Receitas</a> 
+              <img  src="https://img.icons8.com/android/50/fa9e22/sort-down.png">
+              <ul class="navbar-content-detail" :class= "{none: detail1 }">
                 <li> <a>Opção 1</a></li>
                 <li> <a>Opção 2</a></li>
                 <li> <a>Opção 3</a></li>
@@ -51,17 +51,17 @@
             </li>
             <li> <a href="">CookClub</a> </li>
             <li> <a href="">#FoodieFeed</a> </li>
-            <li class="navbar-content"> <a href="">#TeamCook</a> 
-              <img @click="detail2 = !detail2" src="https://img.icons8.com/android/50/fa9e22/sort-down.png" alt="detail2">
-              <ul  class="navbar-content-detail" :class= "fun">
+            <li ref="detail2" @click="teste($event)" class="navbar-content"> <a >#TeamCook</a> 
+              <img src="https://img.icons8.com/android/50/fa9e22/sort-down.png">
+              <ul  class="navbar-content-detail"  :class= "{none: detail2 }">
                 <li> <a>Opção 1</a></li>
                 <li> <a>Opção 2</a></li>
                 <li> <a>Opção 3</a></li>
               </ul>
             </li>
-            <li class="navbar-content"> <a href="">Vídeo</a>
-              <img @click="detail3 = !detail3" src="https://img.icons8.com/android/50/fa9e22/sort-down.png" alt="detail3">
-              <ul class="navbar-content-detail" :class= "fun">
+            <li ref="detail3" @click="teste($event)" class="navbar-content"> <a >Vídeo</a>
+              <img src="https://img.icons8.com/android/50/fa9e22/sort-down.png">
+              <ul class="navbar-content-detail" :class = "{none: detail3}" >
                 <li> <a>Opção 1</a></li>
                 <li> <a>Opção 2</a></li>
                 <li> <a>Opção 3</a></li>
@@ -89,37 +89,25 @@ export default {
         detail3: true
       }
     },
-    computed: {
-
-      fun() {
-        
-        
-          
-      }
-    },
     methods: {
+      teste(e) {
+            
+        if (e.path[0].outerText === 'Receitas') {
+            this.detail1 = !this.detail1
+        } else if (e.path[0].outerText === '#TeamCook') {
+            this.detail2 = !this.detail2
+        } else if (e.path[0].outerText === 'Vídeo') {
+            this.detail3 = !this.detail3
+        }
+      },
       news(event) {
-            const name = event.path[1].className
-            name ? alert(`Direciona para ${name.toUpperCase()}`) : name
+        const name = event.path[1].className
+        name ? alert(`Direciona para ${name.toUpperCase()}`) : name
       },
       search(click) {
         eventBus.makeSearch(click)
       }
-      // navbarDetail(even) {
-      //   // console.log(even.path[0].alt)
-      //   // this.$refs.search.focus()
-      //   switch(even.path[0].alt) {
-      //     case 'detail1':
-      //         this.detail1 = true
-      //       break;
-      //     case 'detail2':
-      //         this.detail2 = true
-      //       break;
-      //     case 'detail3':
-      //         this.detail3 = true
-      //       break
-      //     }
-      // }   
+    
     }
   
 }
@@ -127,9 +115,11 @@ export default {
 
 
 <style scoped>
-  .c {
+  /* toggle class navbar  */
+  .none {
     display: none;
-  }
+  } 
+
   header {
     align-items: center;
     padding-bottom: 10px;
@@ -302,22 +292,26 @@ export default {
   }
 
   .navbar-content-detail {
-    
     position: absolute;
     z-index: 100;
     top: 100%;
-    left: 100%;
-    width: 200%;
+    width: 200px;
     background: #fff;
     border: 5px solid rgb(238, 230, 230);
     border-radius: 4px;
     padding-left: 2px;
-    flex-direction: column;
-    align-items: flex-start;
+    text-align: center;
   }
 
   .navbar-content-detail li {
-    padding: 2px 0%;
+    padding: 4px 0%;
+    width: 100%;
+  }
+
+  .navbar-content-detail a:hover {
+    text-shadow: 1px 1px #888888;
+    font-weight: 900;
+
   }
 
   /* tablet */

@@ -77,8 +77,8 @@ export default {
 
           const exp = new RegExp(this.recipeInputed.trim(), 'i');
           const filtered = this.recipes.filter(recipe => exp.test(recipe.title));
-          console.log(filtered)
-           filtered.length == 0 ? this.noRecipe = 'Desculpe, não encontramos essa receita  :{( ' : this.noRecipe = ''
+      
+           filtered.length === 0 ? this.noRecipe = 'Desculpe, não encontramos essa receita  :{( ' : this.noRecipe = ''
             
           return filtered
         } else {
