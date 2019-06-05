@@ -372,16 +372,17 @@ export default {
     }
 
     .search, .notification {
-      margin-left: 20%;
       height: 30px;
       width: 30px;
     }
 
     .search {
+      margin-left: 20%;
       margin-bottom: 6px;
     }
     
     .notification {
+      margin-right: 20%;
       margin-bottom: 2.5%;
     }
 
